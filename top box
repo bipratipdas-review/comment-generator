@@ -1,0 +1,56 @@
+index.html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Comment Generator</title>
+<style>
+body{
+  font-family: Arial;
+  background:#f4f4f4;
+  text-align:center;
+  padding:30px;
+}
+button{
+  padding:10px 20px;
+  font-size:16px;
+  cursor:pointer;
+}
+#output{
+  margin-top:20px;
+  font-size:18px;
+  background:#fff;
+  padding:15px;
+}
+</style>
+</head>
+
+<body>
+
+<h2>Random Comment Generator</h2>
+<button onclick="generate()">Generate Comment</button>
+
+<div id="output"></div>
+
+<script>
+const comments = [
+ "Very useful app",
+ "Amazing experience",
+ "Fast and easy to use",
+ "Highly recommended",
+ "Works smoothly",
+ "Great interface",
+ "Loved this app",
+ "Best app ever",
+ "Helpful and simple",
+ "Excellent performance"
+];
+
+function generate(){
+ let random = comments[Math.floor(Math.random() * comments.length)];
+ document.getElementById("output").innerText = random;
+}
+</script>
+
+</body>
+</html>
