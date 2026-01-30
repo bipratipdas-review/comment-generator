@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Comment Generator</title>
+
+<style>
+body{
+  margin:0;
+  padding:0;
+  font-family: Arial, sans-serif;
+  background: linear-gradient(135deg,#667eea,#764ba2);
+  min-height:100vh;
+  display:flex;
+  justify-content:center;
+  align-items:center;
+}
+
+.container{
+  background:#fff;
+  width:360px;
+  padding:20px;
+  border-radius:12px;
+  box-shadow:0 10px 25px rgba(0,0,0,0.2);
+  text-align:center;
+}
+
+h2{
+  margin-bottom:15px;
+}
+
+textarea{
+  width:100%;
+  height:90px;
+  padding:10px;
+  resize:none;
+  font-size:14px;
+}
+
+button{
+  width:100%;
+  margin-top:10px;
+  padding:10px;
+  font-size:16px;
+  border:none;
+  border-radius:6px;
+  cursor:pointer;
+  background:#667eea;
+  color:white;
+}
+
+button:hover{
+  background:#5563d6;
+}
+
+.copy{
+  background:#2ecc71;
+}
+.copy:hover{
+  background:#27ae60;
+}
+</style>
+</head>
+
+<body>
+
+<div class="container">
+  <h2>Smart Comment Generator</h2>
+
+  <textarea id="output" placeholder="Your comment will appear here"></textarea>
+
+  <button onclick="generate()">Generate Comment</button>
+  <button class="copy" onclick="copyText()">Copy Comment</button>
+</div>
+
+<script>
+const comments = [
+  "Very useful app with smooth performance",
+  "Amazing experience loved the interface",
+  "Fast secure and easy to use application",
+  "Highly recommended for daily use",
+  "Works perfectly without any issues",
+  "Best app in its category",
+  "Simple design but very powerful",
+  "User friendly and reliable app",
+  "Excellent service and support",
+  "Worth installing and using"
+];
+
+function generate(){
+  const random = comments[Math.floor(Math.random()*comments.length)];
+  document.getElementById("output").value = random;
+}
+
+function copyText(){
+  const text = document.getElementById("output");
+  text.select();
+  document.execCommand("copy");
+  alert("Comment copied!");
+}
+</script>
+
+</body>
+</html>
